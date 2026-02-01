@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هوامش الروح | مساحة شعرية هادئة</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* أنماط أساسية */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Amiri', serif;
+            background-color: #FAF3E0;
+            color: #2C1810;
+            line-height: 1.8;
+            direction: rtl;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* شريط التنقل */
+        nav {
+            background: rgba(250, 243, 224, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(74, 93, 78, 0.1);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            color: #2C1810;
+        }
+        
+        .logo span {
+            color: #4A5D4E;
+        }
+        
+        /* القسم الرئيسي */
+        .hero {
+            padding: 150px 20px 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #2C1810;
+        }
+        
+        .hero h1 span {
+            color: #4A5D4E;
+            font-style: italic;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            color: #5D4E37;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        /* الأزرار */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #4A5D4E;
+            color: #FAF3E0;
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #2C1810;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #4A5D4E;
+            color: #4A5D4E;
+        }
+        
+        .btn-outline:hover {
+            background: #4A5D4E;
+            color: #FAF3E0;
+        }
+        
+        /* أقسام القصائد */
+        .poems-section {
+            padding: 80px 20px;
+        }
+        
+        .poem-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(74, 93, 78, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .poem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: rgba(74, 93, 78, 0.3);
+        }
+        
+        /* التذييل */
+        footer {
+            background: rgba(245, 230, 211, 0.5);
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 1px solid rgba(74, 93, 78, 0.1);
+        }
+        
+        /* التجاوبية */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .nav-links { display: none; }
+        }
+        
+        /* الحركات */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .animate-delay-1 { animation-delay: 0.3s; }
+        .animate-delay-2 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="logo">
+                <span style="font-size: 1.5rem;">🌿</span>
+                <h1>هوامشُ <span>الروح</span></h1>
+            </a>
+            
+            <div class="nav-links">
+                <a href="#" class="btn-outline" style="margin-left: 10px;">الرئيسية</a>
+                <a href="#poems" class="btn-outline" style="margin-left: 10px;">القصائد</a>
+                <a href="#" class="btn-outline" style="margin-left: 10px;">الأرشيف</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- القسم الرئيسي -->
+    <section class="hero animate-fade-in">
+        <div class="container">
+            <h1>هوامشُ <span>الروح</span></h1>
+            <p>مساحة رقمية هادئة مخصصة للشعر والأدب، بعيدًا عن ضجيج العالم الرقمي</p>
+            <div style="margin-top: 30px;">
+                <a href="#poems" class="btn animate-delay-1">اقرأ آخر القصائد</a>
+                <button onclick="showRandomPoem()" class="btn btn-outline animate-delay-2" style="margin-right: 10px;">
+                    قصيدة عشوائية
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم القصائد -->
+    <section id="poems" class="poems-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.2rem;">آخر القصائد</h2>
+            
+            <div class="poem-card">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
+                    <h3 style="font-size: 1.8rem;">في أفياءِ الغروبِ</h3>
+                    <span style="background: #4A5D4E; color: white; padding: 5px 15px; border-radius: 15px; font-size: 0.9rem;">همسات الروح</span>
+                </div>
+                <div style="color: #5D4E37; font-size: 1.2rem; line-height: 2;">
+                    <p>في أفياءِ الغروبِ..</p>
+                    <p>تتلاشى الخطوطُ</p>
+                    <p>ويَبقى الشعورُ</p>
+                    <p>كطيفٍ يسيرُ على الماءِ</p>
+                </div>
+                <div style="margin-top: 20px; color: #8B7355; font-size: 0.9rem;">
+                    <span>ديسمبر ٢٠٢٣ • تأملية</span>
+                </div>
+            </div>
+            
+            <div class="poem-card">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
+                    <h3 style="font-size: 1.8rem;">رحلةُ القلمِ الطويلةُ</h3>
+                    <span style="background: #4A5D4E; color: white; padding: 5px 15px; border-radius: 15px; font-size: 0.9rem;">خطوط الروح</span>
+                </div>
+                <div style="color: #5D4E37; font-size: 1.2rem; line-height: 2;">
+                    <p>يسيرُ القلمُ على الورقِ</p>
+                    <p>كمسافرٍ في صحراءِ الأحرفِ</p>
+                    <p>كلُّ نقطةٍ واحةٌ</p>
+                    <p>وكلُّ فاصلةٍ محطةُ استراحةٍ</p>
+                </div>
+                <div style="margin-top: 20px; color: #8B7355; font-size: 0.9rem;">
+                    <span>نوفمبر ٢٠٢٣ • سردية</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer>
+        <div class="container">
+            <div style="margin-bottom: 20px;">
+                <span style="font-size: 2rem;">🌿</span>
+                <h3 style="margin: 10px 0;">هوامشُ الروح</h3>
+                <p style="color: #5D4E37;">مساحة شعرية هادئة</p>
+            </div>
+            <div style="margin-top: 30px; color: #8B7355; font-size: 0.9rem;">
+                <p>© 2024 هوامش الروح. جميع الحقوق محفوظة.</p>
+                <p style="margin-top: 10px;">صمم بقلب شاعر ✦ كتب بروح صافية</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // وظائف JavaScript بسيطة
+        function showRandomPoem() {
+            const poems = [
+                "في أفياءِ الغروبِ..\nتتلاشى الخطوطُ\nويَبقى الشعورُ",
+                "يسيرُ القلمُ على الورقِ\nكمسافرٍ في صحراءِ الأحرفِ",
+                "أكتبُ حينَ يمتلئُ قلبي\nحينَ يفيضُ الحرفُ عن وعائه"
+            ];
+            
+            const randomPoem = poems[Math.floor(Math.random() * poems.length)];
+            alert("قصيدة عشوائية:\n\n" + randomPoem + "\n\n🌿");
+        }
+        
+        // حركة سلسة للروابط
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // إضافة تأثير عند التمرير
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+  </html>
