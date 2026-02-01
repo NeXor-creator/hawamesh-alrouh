@@ -1,0 +1,126 @@
+/* ملف أنماط أساسي لموقع هوامش الروح */
+
+/* حركات إضافية */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تحسينات إضافية */
+.poem-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.poem-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: #4A5D4E;
+    opacity: 0.1;
+    border-radius: 0 15px 0 0;
+}
+
+/* تحسين التحديد */
+::selection {
+    background-color: #4A5D4E;
+    color: #FAF3E0;
+}
+
+/* تحسين شريط التمرير */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FAF3E0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4A5D4E;
+    border-radius: 4px;
+}
+
+/* تأثيرات النصوص */
+.poem-line {
+    position: relative;
+    padding-right: 20px;
+}
+
+.poem-line::before {
+    content: "❧";
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #4A5D4E;
+    opacity: 0.3;
+    font-size: 0.8em;
+}
+
+/* تأثيرات للهاتف */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem !important;
+    }
+    
+    .poem-card {
+        padding: 20px !important;
+    }
+}
+
+/* تحسينات للأيقونات */
+.icon {
+    transition: all 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+/* تأثيرات للروابط */
+a {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+a:hover {
+    color: #4A5D4E !important;
+}
+
+/* تأثيرات للأزرار */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::after {
+    width: 300px;
+    height: 300px;
+}
